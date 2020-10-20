@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+/*start navbar style sheet*/
 .nav-link {
   color: black;
   font-weight: 600;
@@ -12,6 +13,9 @@
   font-size: 30px;
   font-weight: 800;
 }
+/*end navbar style sheet*/
+
+/*start carousel section style sheet*/
 .carousel-caption {
   position: absolute;
   top: 55%;
@@ -27,7 +31,7 @@
   color: black;
   font-weight: 600;
 }
-.btn0 {
+.shop-btn {
   background-color: red;
   height: 45px;
   width: 150px;
@@ -35,13 +39,14 @@
   outline: none;
   border: none;
 }
-.btn0:hover {
+.shop-btn:hover {
   background-color: white;
   color: red;
   transition: 0.4s;
 }
+/*start carousel section style sheet*/
 
-/*-------------*/
+/*start subscription section style sheet*/
 .sub{
     background-color: rgb(70, 63, 63);
     
@@ -53,7 +58,7 @@
     outline: none;
     padding: 10px;
 }
-.btn1{
+.subscribe-btn{
     height: 50px;
     width: 50%;
     color: white;
@@ -63,7 +68,7 @@
     margin-left: -2px;
 
 }
-.btn1:hover{
+.subscribe-btn:hover{
     background-color: rgb(44, 40, 40);
     color: white;
     transition: 0.6s;
@@ -71,8 +76,9 @@
 .fas{
     font-size: 32px;
 }
+/*end subscription section style sheet*/
 
-/*--------------*/
+/*start new and featured collection style sheet*/
 .collection span{
     color: yellowgreen;
     font-size: 19px;
@@ -108,6 +114,8 @@
     transition: 0.5s;
 
 }
+/*end parallex section style sheet*/
+/*start parallex section style sheet*/
 .parallex{
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/accessories.jpg) no-repeat;
     background-attachment: fixed;
@@ -123,7 +131,7 @@
     font-size:22px ;
 }
 
-.btn2{
+.shop-btn-lookBook{
     height: 40px;
     width: 110px;
     background: transparent;
@@ -132,13 +140,13 @@
     outline: none;
     border-radius: 4px;
 }
-.btn2:hover{
+.shop-btn-lookBook:hover{
     background-color: white;
     color: yellowgreen;
     transition: 0.3s;
     border: none;
 }
-.btn3{
+.getDeal-btn{
     height: 40px;
     width: 110px;
     background-color: white;
@@ -148,10 +156,12 @@
     border-radius: 4px;
 
 }
-.btn3:hover{
+.getDeal-btn:hover{
     background-color: rgb(44, 40, 40);
     color: white;
     border:none;
     outline: none;
     transition: 0.3s;
 }
+/*end parallex section style sheet*/
+
