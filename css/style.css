@@ -47,121 +47,125 @@
 /*start carousel section style sheet*/
 
 /*start subscription section style sheet*/
-.sub{
-    background-color: rgb(70, 63, 63);
-    
+.sub {
+  background-color: rgb(70, 63, 63);
 }
-.sub input{
-    height: 51px;
-    width: 50%;
-    color: black;
-    outline: none;
-    padding: 10px;
+.sub input {
+  height: 51px;
+  width: 50%;
+  color: black;
+  outline: none;
+  padding: 10px;
 }
-.subscribe-btn{
-    height: 50px;
-    width: 50%;
-    color: white;
-    background-color: yellow;
-    outline: none;
-    border: none;
-    margin-left: -2px;
-
+.subscribe-btn {
+  height: 50px;
+  width: 50%;
+  color: white;
+  background-color: yellow;
+  outline: none;
+  border: none;
+  margin-left: -2px;
 }
-.subscribe-btn:hover{
-    background-color: rgb(44, 40, 40);
-    color: white;
-    transition: 0.6s;
+.subscribe-btn:hover {
+  background-color: rgb(44, 40, 40);
+  color: white;
+  transition: 0.6s;
 }
-.fas{
-    font-size: 32px;
+.fas {
+  font-size: 32px;
 }
 /*end subscription section style sheet*/
 
 /*start new and featured collection style sheet*/
-.collection span{
-    color: yellowgreen;
-    font-size: 19px;
-    font-weight: 800;
-    padding-left: 5px;
-
+.collection span {
+  color: yellowgreen;
+  font-size: 19px;
+  font-weight: 800;
+  padding-left: 5px;
 }
-.card{
-    border: none;
-
+.card {
+  border: none;
 }
-.collection input{
-    position: absolute;
-    height: 40px;
-    width: 110px;
-    background-color: yellowgreen;
-    color: white;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    text-align: center;
-    top: 40%;
-    left: 30%;
-    opacity: 0;
-
+.collection input {
+  position: absolute;
+  height: 40px;
+  width: 110px;
+  background-color: yellowgreen;
+  color: white;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  text-align: center;
+  top: 40%;
+  left: 30%;
+  opacity: 0;
 }
-.collection .card:hover input{
-    opacity: 1;
-    transition: 1s;
+.collection .card:hover input {
+  opacity: 1;
+  transition: 1s;
 }
-.collection input:hover{
-    background-color: rgb(102, 97, 97);
-    transition: 0.5s;
-
+.collection input:hover {
+  background-color: rgb(102, 97, 97);
+  transition: 0.5s;
 }
 /*end parallex section style sheet*/
 /*start parallex section style sheet*/
-.parallex{
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/accessories.jpg) no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-    width: 100%;
+.parallex {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/accessories.jpg) no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  width: 100%;
 }
 
-.parallex h1{
-    font-size: 55px;
-    font-weight: 700;
+.parallex h1 {
+  font-size: 55px;
+  font-weight: 700;
 }
-.parallex p{
-    font-size:22px ;
+.parallex p {
+  font-size: 22px;
 }
 
-.shop-btn-lookBook{
-    height: 40px;
-    width: 110px;
-    background: transparent;
-    border: 2px solid white;
-    color: white;
-    outline: none;
-    border-radius: 4px;
+.shop-btn-lookBook {
+  height: 40px;
+  width: 110px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  outline: none;
+  border-radius: 4px;
 }
-.shop-btn-lookBook:hover{
-    background-color: white;
-    color: yellowgreen;
-    transition: 0.3s;
-    border: none;
+.shop-btn-lookBook:hover {
+  background-color: white;
+  color: yellowgreen;
+  transition: 0.3s;
+  border: none;
 }
-.getDeal-btn{
-    height: 40px;
-    width: 110px;
-    background-color: white;
-    outline: none;
-    border: none;
-    color: yellowgreen;
-    border-radius: 4px;
-
+.getDeal-btn {
+  height: 40px;
+  width: 110px;
+  background-color: white;
+  outline: none;
+  border: none;
+  color: yellowgreen;
+  border-radius: 4px;
 }
-.getDeal-btn:hover{
-    background-color: rgb(44, 40, 40);
-    color: white;
-    border:none;
-    outline: none;
-    transition: 0.3s;
+.getDeal-btn:hover {
+  background-color: rgb(44, 40, 40);
+  color: white;
+  border: none;
+  outline: none;
+  transition: 0.3s;
 }
 /*end parallex section style sheet*/
 
+.my-footer {
+  background-color: rgb(70, 63, 63);
+}
+.my-footer a{
+  color: white;
+  font-weight: 300;
+}
+.my-footer a:hover{
+    color: blue;
+}
