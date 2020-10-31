@@ -52,8 +52,11 @@
             <a class="nav-link pr-4" href="./contactus.html">Contact Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pr-4" href="./account.html">Account</a>
+            <a class="nav-link pr-4" id="accountPage" href="./account.html">Account</a>
           </li>
+           <li class="nav-item">
+          <a class="nav-link pr-4" id="logOut" href="#">Log Out</a>
+        </li>
         </ul>
       </div>
     </nav>
@@ -251,6 +254,32 @@
     <script src="./js/popper.js"></script>
     <script src="./js/bootstrap.js"></script>
     <script src="./js/products.js"></script>
+    <script>
+      let LoggedInUser = JSON.parse(sessionStorage.getItem("userData"))
+      if (!LoggedInUser) {
+        window.location = './account.html';
+        //  RegisterForm.css("transform", "translateX(300px)");
+        //  LoginForm.css("transform", "translateX(300px)");
+        //  indicator.css("transform", "translateX(0px)");
+        
+      }
+    
+       LoggedInUser = JSON.parse(sessionStorage.getItem("userData"))
+      if (LoggedInUser) {
+        document.getElementById("accountPage").style.display = 'none';
+        document.getElementById("logOut").style.display = 'block';
+
+      }
+      else {
+           document.getElementById("accountPage").style.display = 'block';
+        document.getElementById("logOut").style.display = 'none';
+      }
+      document.getElementById("logOut").addEventListener('click',function(){
+        sessionStorage.clear();
+        window.location = window.location;
+      })
+   
+    </script>
 
   </body>
 </html>

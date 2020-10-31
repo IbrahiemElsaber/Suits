@@ -52,14 +52,16 @@ $("#productDetails").prepend(`<div class="col-md-3">
     </div>
 
 `);
+
     // if (localStorage.getItem("user")) {
-    //   let arr = JSON.parse(localStorage.getItem("user"));
+    //   // let arr = JSON.parse(localStorage.getItem("user"));
     //   let arr2 = JSON.parse(sessionStorage.getItem("userData"));
     //   for (let i = 0; i < arr.length; i++) {
-    //     if (arr[i].userName === null) {
-    //       location.href = "./account.html";
-    //       break;
-    //     } else if (arr2[i].userName1 === null) {
+    //     // if (arr[i].userName === null) {
+    //     //   location.href = "./account.html";
+    //     //   break;
+    //     // } else
+    //      if (arr2[i].userName1 === null) {
     //       location.href = "./account.html";
     //       RegisterForm.css("transform", "translateX(300px)");
     //       LoginForm.css("transform", "translateX(300px)");
@@ -68,6 +70,13 @@ $("#productDetails").prepend(`<div class="col-md-3">
     //     }
     //   }
     // } else {
+
+
+
+
+
+
+
       $("#addProductToCart").on("click", function () {
         //   let arr = JSON.parse(localStorage.getItem("user"));
         // for (let i = 0; i < arr.length; i++) {
@@ -118,9 +127,10 @@ $("#productDetails").prepend(`<div class="col-md-3">
         // }
       });
     // }
-let productDetailsArray = JSON.parse(localStorage.getItem("productDemo"));
 
-for (let i = 0; i < productDetailsArray.length; i++) {
+let productDetailsArray = JSON.parse(localStorage.getItem("productDemo")) || [];
+
+for (let i = 0; i < productDetailsArray.length; i++) { 
   let finalTotalPrice = 0;
   let name = productDetailsArray[i].productNme;
   let imgSrc = productDetailsArray[i].imageSource;

@@ -53,14 +53,17 @@
             <a class="nav-link pr-4" href="./products.html">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pr-4 disabled" href="./cart.html">Cart</a>
+            <a class="nav-link pr-4 " href="./cart.html">Cart</a>
           </li>
           <li class="nav-item">
             <a class="nav-link pr-4" href="./contactus.html">Contact Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pr-4" href="./account.html">Account</a>
+            <a class="nav-link pr-4" id="accountPage" href="./account.html">Account</a>
           </li>
+           <li class="nav-item">
+          <a class="nav-link pr-4" id="logOut" href="#">Log Out</a>
+        </li>
         
         </ul>
       </div>
@@ -222,5 +225,23 @@
       integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
       crossorigin="anonymous"
     ></script>
+    <script>
+      let LoggedInUser = JSON.parse(sessionStorage.getItem("userData"))
+      if (LoggedInUser) {
+        document.getElementById("accountPage").style.display = 'none';
+        document.getElementById("logOut").style.display = 'block';
+
+      }
+      else {
+           document.getElementById("accountPage").style.display = 'block';
+        document.getElementById("logOut").style.display = 'none';
+      }
+      document.getElementById("logOut").addEventListener('click',function(){
+        sessionStorage.clear();
+          // document.getElementById("accountPage").style.display = 'none';
+        // document.getElementById("logOut").style.display = 'block';
+        window.location = window.location;
+      })
+    </script>
   </body>
 </html>
