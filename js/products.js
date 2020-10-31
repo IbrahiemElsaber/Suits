@@ -15,7 +15,6 @@ $.ajax({
 
     $(".seeMore").each(function (index) {
       $(this).on("click", function () {
-        
         let imgSrc = products[index].productImg,
           productName = products[index].productName,
           productBrand = products[index].productBrand,
@@ -28,7 +27,7 @@ $.ajax({
       });
     });
   },
-  error: function (xhr, textStatus, err) {},
+  error: function (xhr, textStatus, err) { },
 });
 
 $("#productDetails").prepend(`<div class="col-md-3">
@@ -37,8 +36,8 @@ $("#productDetails").prepend(`<div class="col-md-3">
     <div class="col-md-6 mb-3" >
       <!-- <p class="product-details text-center">NEW</p> -->
       <h2 class="product-details-header">${localStorage.getItem(
-        "productName"
-      )}</h2>
+  "productName"
+)}</h2>
       <p>Product Brand: ${localStorage.getItem("productBrand")}</p>
       <img src="./images/5stars.jpg" class="stars">
       <p class="price"> USD ${localStorage.getItem("productLastP")}</p>
@@ -53,93 +52,35 @@ $("#productDetails").prepend(`<div class="col-md-3">
 
 `);
 
-    // if (localStorage.getItem("user")) {
-    //   // let arr = JSON.parse(localStorage.getItem("user"));
-    //   let arr2 = JSON.parse(sessionStorage.getItem("userData"));
-    //   for (let i = 0; i < arr.length; i++) {
-    //     // if (arr[i].userName === null) {
-    //     //   location.href = "./account.html";
-    //     //   break;
-    //     // } else
-    //      if (arr2[i].userName1 === null) {
-    //       location.href = "./account.html";
-    //       RegisterForm.css("transform", "translateX(300px)");
-    //       LoginForm.css("transform", "translateX(300px)");
-    //       indicator.css("transform", "translateX(0px)");
-    //       break;
-    //     }
-    //   }
-    // } else {
-
-
-
-
-
-
-
-      $("#addProductToCart").on("click", function () {
-        //   let arr = JSON.parse(localStorage.getItem("user"));
-        // for (let i = 0; i < arr.length; i++) {
-        //   if (arr[i].userName !== null) {
-        $(".disabled").removeClass("disabled");
-        let productQuantity = $("#proQuantity").val();
-        let finalPrice = localStorage.getItem("productLastP").slice(1);
-        let totalPrice = parseInt(productQuantity) * parseInt(finalPrice);
-
-        if (localStorage.getItem("productDemo")) {
-          let productDetailsArray = JSON.parse(
-            localStorage.getItem("productDemo")
-          );
-          let productDetailsObj = {
-            imageSource: localStorage.getItem("imageSrc"),
-            productNme: localStorage.getItem("productName"),
-            productBrnd: localStorage.getItem("productBrand"),
-            productFinalPrice: localStorage.getItem("productLastP"),
-            productQuantity: productQuantity,
-            productTotalPrice: totalPrice,
-          };
-          productDetailsArray.push(productDetailsObj);
-          localStorage.setItem(
-            "productDemo",
-            JSON.stringify(productDetailsArray)
-          );
-        } else {
-          let productDetailsArray = [];
-          let productDetailsObj = {
-            imageSource: localStorage.getItem("imageSrc"),
-            productNme: localStorage.getItem("productName"),
-            productBrnd: localStorage.getItem("productBrand"),
-            productFinalPrice: localStorage.getItem("productLastP"),
-            productQuantity: productQuantity,
-            productTotalPrice: totalPrice,
-          };
-          productDetailsArray.push(productDetailsObj);
-          localStorage.setItem(
-            "productDemo",
-            JSON.stringify(productDetailsArray)
-          );
-        }
-        //     }
-        //   else{
-        //     alert("you must login first");
-        //     location.href = './account.html'
-        //   }
-        // }
-      });
-    // }
+$("#addProductToCart").on("click", function () {
+  let productQuantity = $("#proQuantity").val();
+  let finalPrice = localStorage.getItem("productLastP").slice(1);
+  let totalPrice = parseInt(productQuantity) * parseInt(finalPrice);
+  let productDetailsArray = JSON.parse(localStorage.getItem("productDemo")) || [];
+  let productDetailsObj = {
+    imageSource: localStorage.getItem("imageSrc"),
+    productNme: localStorage.getItem("productName"),
+    productBrnd: localStorage.getItem("productBrand"),
+    productFinalPrice: localStorage.getItem("productLastP"),
+    productQuantity: productQuantity,
+    productTotalPrice: totalPrice,
+  };
+  productDetailsArray.push(productDetailsObj);
+  localStorage.setItem("productDemo", JSON.stringify(productDetailsArray));
+});
 
 let productDetailsArray = JSON.parse(localStorage.getItem("productDemo")) || [];
 
-for (let i = 0; i < productDetailsArray.length; i++) { 
-  let finalTotalPrice = 0;
+let finalTotalPrice = 0;
+for (let i = 0; i < productDetailsArray.length; i++) {
+  let clicked = false;
   let name = productDetailsArray[i].productNme;
   let imgSrc = productDetailsArray[i].imageSource;
   let brand = productDetailsArray[i].productBrnd;
   let price = productDetailsArray[i].productFinalPrice;
   let quantity = productDetailsArray[i].productQuantity;
   let total = productDetailsArray[i].productTotalPrice;
-  
-  // finalTotalPrice += total;
+  finalTotalPrice += total;
 
   $("#cartTable").append(`<tr id="count">
             <td class="cart-index align-middle">${name}</td>
@@ -154,46 +95,21 @@ for (let i = 0; i < productDetailsArray.length; i++) {
             <td class="cart-price align-middle">${price}</td>
             <td class="cart-quantity align-middle">${quantity}</td>
             <td class="cart-total-price align-middle"  id="totalPriceAmount">${total}</td>`);
-            // let f = parseInt($("#totalPriceAmount").val());
-            // finalTotalPrice+=f;
 
-      
-            $("#orderBtn").on("click", function () {
-      
-    
-
-     var emailVal = $("#emailInput").val();
-     $("#emailP").text(emailVal);
-     
-    // $("#Receipt").append(`
-    // <b>Product Name:</b><span style="color:orange">${name}</span>
-    // <b>Product Price is:</b><span style="color:orange">${price}</span>
-    // <b>Product Quantity:</b><span style="color:orange">${quantity}</span>
-    // <b>total Amount is:</b><span style="color:orange">$${total}</span>
-
-    // `)
-    $(`
-    <b>Product Name:</b><span style="color:orange">${name}</span>
+  $("#orderBtn").on("click", function () {
+    if (clicked == false) {
+      clicked = true;
+    }
+    else return;
+    let emailVal = $("#emailInput").val();
+    $("#emailP").text(emailVal);
+    $(`<b>Product Name:</b><span style="color:orange">${name}</span>
     <b>Product Price is:</b><span style="color:orange">${price}</span>
     <b>Product Quantity:</b><span style="color:orange">${quantity}</span>
     <b>total Price is:</b><span style="color:orange">$${total}</span>
  
- ------------------------</br>
-    `).insertBefore(".totalAmount");
-    // for (let i = 0; i < productDetailsArray.length; i++) {
-    //   let total = productDetailsArray[i].productTotalPrice;
-    //   total += total;
-      
-    // }
-      
-
-
-    
+ ------------------------</br>`).insertBefore(".totalAmount");
   });
-  
-  $("#totalPrice").text(total);
-}
 
-//  total +=total;
-//   $("#Receipt").append(`------------------------</br>
-//   <b>Total price is:</b><span style="color:orange">$${total}</span></br>------------------------</br>`)
+  $("#totalPrice").text(finalTotalPrice);
+}
