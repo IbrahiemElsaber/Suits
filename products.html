@@ -7,11 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous" />
+   <link href="./css/bootstrap.css" rel="stylesheet" />
+    <link href="./css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
 
   <title>Products Page</title>
 </head>
@@ -42,10 +40,7 @@
           <a class="nav-link pr-4" href="./contactus.html">Contact Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link pr-4" href="#">Sign UP</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link pr-4" href="#">Log In</a>
+          <a class="nav-link pr-4" href="./account.html">Account</a>
         </li>
       </ul>
     </div>
@@ -54,24 +49,8 @@
 
   
 <div class="container mt-3">
-  <div class="row">
-    <div class="col-md-3">
-      <img src="./images/16.jpg" class="w-100 product-img" alt="...">
-    </div>
-    <div class="col-md-6 mb-3">
-      <p class="product-details text-center">NEW</p>
-      <h2 class="product-details-header">Men's Suits Black Classic</h2>
-      <p>Product Code: ABC2020</p>
-      <img src="./images/5stars.jpg" class="stars">
-      <p class="price"> USD $15.00</p>
-      <p><b>Availability: </b>In Stock</p>
-      <p><b>Condition: </b>New</p>
-      <p><b>Brand: </b>ABC Company</p>
-      <label><b>Quantity:</b> </label>
-      <input class="quantity" type="number" value="1" min="0" max="50">
-      <button type="button" class="btn btn-default add-to-cart-btn" >Add to cart</button>
-      
-    </div>
+  <div class="row" id="productDetails">
+
     <!--Start of Carousal-->
     <div class="col-md-3 ">
     <div id="carouselExampleControls" class="carousel slide product-img" data-ride="carousel" data-interval="2000">
@@ -174,7 +153,7 @@
               <a href="./contactus.html">Contact us</a>
             </li>
             <li>
-              <a href="./aboutus.html">about us</a>
+              <a href="./aboutus.html">About us</a>
             </li>
             <li>
               <a href="#!">Login</a>
@@ -225,15 +204,11 @@
 
   <!--End Footer-->
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-    integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
-    crossorigin="anonymous"></script>
+  <script src="./js/JQuery-3.3.1.js"></script>
+    <script src="./js/popper.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/products.js"></script>
+    <script src="./js/account.js"></script>
 </body>
 
 </html>
