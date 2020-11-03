@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
     integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous" />
     <title>Cart Page</title>
+     <script src="./js/es6-module-loader-dev.js"></script>
+    <script src="./js/traceur.js"></script>
+    <script type="module">
+        System.import("./js/app.js")
+    </script>
   </head>
 
   <body>
@@ -113,7 +118,7 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6 col-12">
           <div class="row">
-            <input type="text" placeholder="Your Email" id="emailInput" />
+            <input type="text" placeholder="Your User Name ..." id="emailInput" />
             <button type="button" class="subscribe-btn btn" id="orderBtn" data-toggle="modal" data-target=".bd-example-modal-sm">Shop Now </button>
           </div>
         </div>
@@ -254,31 +259,14 @@
     <script src="./js/JQuery-3.3.1.js"></script>
     <script src="./js/popper.js"></script>
     <script src="./js/bootstrap.js"></script>
-    <script src="./js/products.js"></script>
+   
     <script>
       let LoggedInUser = JSON.parse(sessionStorage.getItem("userData"))
       if (!LoggedInUser) {
         window.location = './account.html';
-        //  RegisterForm.css("transform", "translateX(300px)");
-        //  LoginForm.css("transform", "translateX(300px)");
-        //  indicator.css("transform", "translateX(0px)");
         
       }
-    
-       LoggedInUser = JSON.parse(sessionStorage.getItem("userData"))
-      if (LoggedInUser) {
-        document.getElementById("accountPage").style.display = 'none';
-        document.getElementById("logOut").style.display = 'block';
-
-      }
-      else {
-           document.getElementById("accountPage").style.display = 'block';
-        document.getElementById("logOut").style.display = 'none';
-      }
-      document.getElementById("logOut").addEventListener('click',function(){
-        sessionStorage.clear();
-        window.location = window.location;
-      })
+   
    
     </script>
 

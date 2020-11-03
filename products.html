@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="./css/style.css" />
 
   <title>Products Page</title>
+   <script src="./js/es6-module-loader-dev.js"></script>
+    <script src="./js/traceur.js"></script>
+    <script type="module">
+        System.import("./js/app.js")
+    </script>
 </head>
 
 <body>
@@ -210,24 +215,7 @@
   <script src="./js/JQuery-3.3.1.js"></script>
     <script src="./js/popper.js"></script>
     <script src="./js/bootstrap.js"></script>
-    <script src="./js/products.js"></script>
-    <script src="./js/account.js"></script>
-    <script>
-      let LoggedInUser = JSON.parse(sessionStorage.getItem("userData"))
-      if (LoggedInUser) {
-        document.getElementById("accountPage").style.display = 'none';
-        document.getElementById("logOut").style.display = 'block';
-
-      }
-      else {
-           document.getElementById("accountPage").style.display = 'block';
-        document.getElementById("logOut").style.display = 'none';
-      }
-      document.getElementById("logOut").addEventListener('click',function(){
-        sessionStorage.clear();
-        window.location = window.location;
-      })
-    </script>
+  
 </body>
 
 </html>

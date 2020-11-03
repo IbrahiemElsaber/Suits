@@ -1,14 +1,13 @@
-let username = $("#usrName");
-let email = $("#usrEmail");
-let phone = $("#usrPhone");
-let password = $("#usrPass");
-let LoginForm = $("#LoginForm");
-let RegisterForm = $("#RegisterForm");
-let loginBtn = $("#loginBtn");
-let regBtn = $("#regBtn");
-let indicator = $("#indicator");
-let userSessionObj = {};
-
+export let username = $("#usrName");
+export let email = $("#usrEmail");
+export let phone = $("#usrPhone");
+export let password = $("#usrPass");
+export let LoginForm = $("#LoginForm");
+export let RegisterForm = $("#RegisterForm");
+export let loginBtn = $("#loginBtn");
+export let regBtn = $("#regBtn");
+export let indicator = $("#indicator");
+export let userSessionObj = {};
 
 // Validate Form
 function validateUserForm() {
@@ -153,19 +152,19 @@ function matchWithRegEx(regEx, field, message) {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-regBtn.on("click", function () {
+export let r = regBtn.on("click", function () {
   RegisterForm.css("transform", "translateX(0px)");
   LoginForm.css("transform", "translateX(0px)");
   indicator.css("transform", "translateX(100px)");
 });
-loginBtn.on("click", function () {
+export let rr = loginBtn.on("click", function () {
   RegisterForm.css("transform", "translateX(300px)");
   LoginForm.css("transform", "translateX(300px)");
   indicator.css("transform", "translateX(0px)");
 });
 
 //Registration Form Submit
-RegisterForm.on("submit", function (e) {
+export let rrr = RegisterForm.on("submit", function (e) {
   e.preventDefault();
   if (validateUserForm()) {
     let obj = {
@@ -196,14 +195,17 @@ RegisterForm.on("submit", function (e) {
   }
 });
 
-//Login Submit
-$("#loginSubmit").on("click", function (e) {
+export let loginSubmitBtn = $("#loginSubmit").on("click", function (e) {
   e.preventDefault();
   (username = $("#LoginForm input[type='text']")),
     (password = $("#LoginForm input[type='password']"));
 
   let loggedInUsers = JSON.parse(localStorage.getItem("user")) || [];
   const ifLoggedUSerExists = loggedInUsers.find(function (user) {
+    if (username.val() === "" || password.val() === "") {
+      alert("Enter Your user name and password");
+    }
+
     if (
       username.val() === user.userName &&
       password.val() === user.userPassword
@@ -218,9 +220,7 @@ $("#loginSubmit").on("click", function (e) {
     };
     sessionStorage.setItem("userData", JSON.stringify(userSessionObj));
     window.location.href = "./index.html";
-  } else if (username.val() !== user.userName) {
-    alert("The user with this username is not exist");
-  } else if (password.val() != user.userPassword) {
-    alert("Password isn't correct !");
+  } else {
+    alert("wrong username or password");
   }
 });

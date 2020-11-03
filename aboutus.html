@@ -24,6 +24,11 @@
     />
 
     <title>About us Page</title>
+     <script src="./js/es6-module-loader-dev.js"></script>
+    <script src="./js/traceur.js"></script>
+    <script type="module">
+        System.import("./js/app.js")
+    </script>
   </head>
 
   <body>
@@ -223,23 +228,5 @@
       integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
       crossorigin="anonymous"
     ></script>
-    <script>
-      let LoggedInUser = JSON.parse(sessionStorage.getItem("userData"))
-      if (LoggedInUser) {
-        document.getElementById("accountPage").style.display = 'none';
-        document.getElementById("logOut").style.display = 'block';
-
-      }
-      else {
-           document.getElementById("accountPage").style.display = 'block';
-        document.getElementById("logOut").style.display = 'none';
-      }
-      document.getElementById("logOut").addEventListener('click',function(){
-        sessionStorage.clear();
-          // document.getElementById("accountPage").style.display = 'none';
-        // document.getElementById("logOut").style.display = 'block';
-        window.location = window.location;
-      })
-    </script>
   </body>
 </html>
